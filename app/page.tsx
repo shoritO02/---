@@ -7,6 +7,8 @@ export default function HomePage() {
       <Link href="/products">Перейти к списку продуктов</Link>
       <br />
       <Link href="/posts">Перейти к постам</Link>
+      <br />
+      <Link href="/tasks">Перейти к задачам</Link>
     </main>
   );
 }
