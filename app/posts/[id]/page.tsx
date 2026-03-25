@@ -1,5 +1,5 @@
-import { cache } from "react";
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import { cacheLife } from 'next/cache';
 
 type Post = {
   userId: number;
@@ -12,10 +12,12 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
-const getPost = cache(async (id: string): Promise<Post> => {
+async function getPost(id: string): Promise<Post> {
+  'use cache';
+  cacheLife('hours');
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   return res.json();
-});
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
