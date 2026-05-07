@@ -1,16 +1,18 @@
-import Link from "next/link";
+'use client';
+
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function PostsPage() {
+  const [date] = useState(() => new Date().toISOString());
+
   return (
-    <main>
-      <h1>Список постов</h1>
-      <ul>
-        {Array.from({ length: 10 }, (_, i) => i + 1).map((id) => (
-          <li key={id}>
-            <Link href={`/posts/${id}`}>Пост {id}</Link>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <div style={{ maxWidth: '600px', margin: '40px auto', padding: '0 16px' }}>
+      <span>{date}</span>
+      <br /><br />
+      <Link href="/posts/create">Create Post</Link>
+      <br /><br />
+      <Link href="/posts/1">Перейти к посту 1</Link>
+    </div>
   );
 }
