@@ -1,0 +1,11 @@
+{
+  "home": "Home Page",
+  "products": "Go to products",
+  "posts": "Go to posts",
+  "tasks": "Go to tasks",
+  "register": "Register",
+  "welcome": "Welcome, {{name}}!",
+  "items_count_one": "{{count}} item",
+  "items_count_other": "{{count}} items",
+  "visit_docs": "Visit <link>the documentation</link> for details."
+}
